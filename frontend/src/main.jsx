@@ -1,7 +1,20 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { createBrowserRouter } from 'react-router'
+import { RouterProvider } from 'react-router/dom'
+import HomePage from './pages/index'
+import ContactPage from './pages/contact'
 
-import App from './App'
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <HomePage />,
+  },
+  {
+    path: '/contact',
+    element: <ContactPage />,
+  },
+])
 
 const root = document.getElementById('root')
 if (!root) {
@@ -10,6 +23,6 @@ if (!root) {
 
 createRoot(root).render(
   <StrictMode>
-    <App />
+    <RouterProvider router={router} />,
   </StrictMode>
 )
