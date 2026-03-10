@@ -1,9 +1,8 @@
 import React from 'react'
+import Header from '../components/Header'
 
 export default function SpotlightPage() {
   return (
-    <div>
-      <h1>Spotlights</h1>
-    </div>
+    <Header />
   )
 }
