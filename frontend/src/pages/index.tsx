@@ -48,40 +48,44 @@ export default function HomePage() {
       </section>
 
       <section className="about">
-        <div className="about-text">
-          <h2>Welcome to Peaks and Professors</h2>
-          <p>
-            We bring together adventure, learning, and community through
-            unforgettable outdoor experiences.
-          </p>
-          <button>Learn More</button>
-        </div>
+        <div className="container about-layout">
+          <div className="about-text">
+            <h2>Welcome to Peaks and Professors</h2>
+            <p>
+              We bring together adventure, learning, and community through
+              unforgettable outdoor experiences.
+            </p>
+            <button>Learn More</button>
+          </div>
 
-        <div className="about-visual">
-          <p>Image / Quote / Highlight goes here</p>
+          <div className="about-visual">
+            <p>Image / Quote / Highlight goes here</p>
+          </div>
         </div>
       </section>
 
       <section className="cool">
-        <h2>Why Join Us?</h2>
+          <div className="container">
+            <h2>Why Join Us?</h2>
 
-        <div className="cool-cards">
-          <div className="cool-card">
-            <h3>Community</h3>
-            <p>Meet people who love exploring, learning, and making memories.</p>
-          </div>
+            <div className="cool-cards">
+              <div className="cool-card">
+                <h3>Community</h3>
+                <p>Meet people who love exploring, learning, and making memories.</p>
+              </div>
 
-          <div className="cool-card">
-            <h3>Adventure</h3>
-            <p>Discover new trails, places, and experiences beyond the classroom.</p>
-          </div>
+              <div className="cool-card">
+                <h3>Adventure</h3>
+                <p>Discover new trails, places, and experiences beyond the classroom.</p>
+              </div>
 
-          <div className="cool-card">
-            <h3>Learning</h3>
-            <p>Connect with professors and students in a unique outdoor setting.</p>
+              <div className="cool-card">
+                <h3>Learning</h3>
+                <p>Connect with professors and students in a unique outdoor setting.</p>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
 
       <section className="events">
         <div className="events-text">

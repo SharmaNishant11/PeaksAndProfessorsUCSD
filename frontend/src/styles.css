@@ -1,6 +1,13 @@
 * {
   box-sizing: border-box;
 }
+:root {
+  --ucsd-blue: #0b3d91;
+  --ucsd-gold: #ffcd00;
+  --soft-gray: #f7f7f7;
+  --dark-text: #111;
+  --forest-green: #2f6b3f;
+}
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -23,16 +30,20 @@ section {
   padding: 100px 60px;
 }
 
-.hero {
-  background-color: lightblue;
+.about {
+  background-color: white;
 }
 
-.about {
-  background-color: lightblue;
+.cool {
+  background-color: var(--soft-gray);
 }
 
 .events {
-  background-color: #f5f5f5;
+  background-color: white;
+}
+
+.updates {
+  background-color: var(--soft-gray);
 }
 
 .footer-section {
@@ -51,6 +62,25 @@ section {
 
 .about,.events{
   gap: 60px;
+}
+.cool h2,
+.about-text h2,
+.events-text h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 30px;
+}
+
+.cool h2::after,
+.about-text h2::after,
+.events-text h2::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 5px;
+  background-color: var(--ucsd-gold);
+  margin-top: 10px;
+  border-radius: 999px;
 }
 /* hero section */
 .hero {
@@ -149,12 +179,13 @@ section {
 }
 
 .hero-content button {
-  padding: 12px 24px;
+  padding: 14px 28px;
   border: none;
-  background-color: black;
-  color: white;
+  background-color: var(--ucsd-gold);
+  color: black;
   cursor: pointer;
   border-radius: 8px;
+  font-weight: 700;
 }
 
 .hero-image-placeholder {
@@ -173,12 +204,15 @@ section {
 }
 
 /* about */
-.about {
+..about {
   background-color: white;
+}
+
+.about-layout {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
+  gap: 60px;
   flex-wrap: wrap;
 }
 
@@ -201,10 +235,11 @@ section {
 .about-text button {
   padding: 12px 24px;
   border: none;
-  background-color: black;
+  background-color: var(--ucsd-blue);
   color: white;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .about-visual {
@@ -284,10 +319,11 @@ section {
 .events-text button {
   padding: 12px 24px;
   border: none;
-  background-color: black;
+  background-color: var(--ucsd-blue);
   color: white;
   border-radius: 8px;
   cursor: pointer;
+  font-weight: 700;
 }
 
 .events-calendar {
