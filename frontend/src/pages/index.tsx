@@ -1,30 +1,50 @@
-import React from 'react';
+import React from "react";
+import img1 from "../assets/PAP_IMG1.jpg";
+import img2 from "../assets/PAP_IMG2.jpg";
+import logoImg from "../assets/logo.png"; // new logo
 
 export default function HomePage() {
+  const images = [img1, img2];
+  const [current, setCurrent] = React.useState(0);
+
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % images.length);
+    }, 3000);
+
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div>
-      <section className="hero">
+      <section
+        className="hero"
+        style={{
+          backgroundImage: `url(${images[current]})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          transition: "background-image 0.5s ease-in-out",
+        }}
+      >
         <div className="hero-top">
-        <div className="logo">LOGO</div>
+          <div className="logo">
+            <img src={logoImg} alt="Logo" className="logo-img" />
+          </div>
 
-        <nav className="nav-tabs">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Trips</a>
-          <a href="#">Updates</a>
-          <a href="#">Contact</a>
-        </nav>
-      </div>
+          <nav className="nav-tabs">
+            <a href="/">Home</a>
+            <a href="/faq">FAQ</a>
+            <a href="/spotlight">Spotlight</a>
+            <a href="/history">History</a>
+            <a href="/contact">Contact</a>
+          </nav>
+        </div>
 
-      <div className="hero-content">
-        <h1>Peaks and Professors</h1>
-        <p>Adventure, community, and exploration.</p>
-        <button>Join Us</button>
-      </div>
-
-      <div className="hero-image-placeholder">
-        <p>Slideshow Image Goes Here</p>
-      </div>
+        <div className="hero-content">
+          <h1>Peaks and Professors</h1>
+          <p>Adventure, community, and exploration.</p>
+          <button>Join Us</button>
+        </div>
       </section>
 
       <section className="about">
@@ -89,8 +109,8 @@ export default function HomePage() {
         <div className="updates-news">
           <h2>Recent Updates</h2>
           <ul>
-            <p> New trips coming soon! </p>
-            <p> Stay Tuned  </p>
+            <li>New trips coming soon!</li>
+            <li>Stay tuned for announcements.</li>
           </ul>
         </div>
 
